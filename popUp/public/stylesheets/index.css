@@ -1,0 +1,98 @@
+body {
+    background-color: #b0c4de;
+    margin: auto;
+}
+
+.tabs {
+    width:100%;
+    height:100%;
+    line-height: 40px;
+    display:inline-block;
+    background-color: #800000;
+    border: groove;
+    border-color: #808080;
+    border-width: 5px;
+    border-collapse: collapse;
+}
+
+.tabs-content {
+    width:100%;
+    height:80vh;
+    line-height: 40px;
+    display:inline-block;
+    background-color: #800000;
+    border: groove;
+    border-color: #808080;
+    border-width: 5px;
+    border-collapse: collapse;
+}
+
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+    
+    .tab-links {
+        margin-bottom: 0px;
+    }
+ 
+    .tab-links li {
+        margin:0px 0px;
+        float:left;
+        list-style:none;
+        
+    }
+ 
+        .tab-links a {
+            padding:15px 75px;
+            display:inline-block;
+            border-radius:3px 3px 0px 0px;
+            border: solid;
+            border-color: #000000;
+            border-width: 1px;
+            background:#7FB5DA;
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#d3d3d3;
+        color:#4c4c4c;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+    .center {
+        margin-left: 20px;
+    }
+    
+input.query {
+    
+    margin-left: 20px;
+    width: 70%;
+
+}

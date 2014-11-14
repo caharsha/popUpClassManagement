@@ -1,0 +1,17 @@
+%head
+    = stylesheet_link_tag "index"
+    
+    .tabs
+        %ul.tab-links
+            %li.active
+                = link_to "View Class Schedule", calendars_path
+            %li
+                = link_to "Generate Reports", reports_path
+            %li 
+                %a View Students
+
+%body
+ 
+    .tabs-content
+        .tab.active#tab1
+            %p Insert Calendar Here
