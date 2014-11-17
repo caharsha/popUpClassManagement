@@ -1,0 +1,24 @@
+%head
+    = stylesheet_link_tag "index"
+    = javascript_include_tag "application"
+    
+    .tabs
+        %ul.tab-links
+            %li
+                = link_to "View Class Schedule", calendars_path
+            %li.active
+                = link_to "Generate Reports", reports_path
+            %li 
+                %a View Students
+
+%body
+ 
+    .tabs-content
+        .tab.active#tab2
+            .center
+                %h1 Generate Custom Reports
+            %input.query#query{:type=>"text", :required => true, :value => "#{@query}"}
+            %button.queryButton#queryButton Submit Request
+            
+            %p Your query was
+            %p= @query

@@ -1,6 +1,10 @@
 body {
-    background-color: #b0c4de;
+    background: linear-gradient(to right, black, #dddddd, black);
     margin: auto;
+}
+
+h1{
+    text-align: center;
 }
 
 .tabs {
@@ -15,7 +19,7 @@ body {
     border-collapse: collapse;
 }
 
-.tabs-content {
+.tabs-content, .content {
     width:100%;
     height:80vh;
     line-height: 40px;

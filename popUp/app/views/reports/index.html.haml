@@ -1,5 +1,6 @@
 %head
     = stylesheet_link_tag "index"
+    = javascript_include_tag "application"
     
     .tabs
         %ul.tab-links
@@ -16,6 +17,6 @@
         .tab.active#tab2
             .center
                 %h1 Generate Custom Reports
-            %input.query{:type=>"text", :required => true, :placeholder => "Enter Report Query"}
-            .center
-                %button Request Reports
+            %input.query#query{:type=>"text", :required => true, :placeholder => "Enter Report Query"}
+            %button.queryButton#queryButton Submit Request
+            
