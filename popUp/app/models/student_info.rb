@@ -1,4 +1,4 @@
 
-class Student_Info < ActiveRecord::Base
+class StudentInfo < ActiveRecord::Base
     self.table_name = "Student_Info"
 end
