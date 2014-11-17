@@ -1,6 +1,7 @@
 
+$(function(){
 
-window.onload = function(){
+    console.log("load");
 
     $('#queryButton').click( function(e){
     
@@ -35,4 +36,4 @@ window.onload = function(){
     
     });
 
-}
+});

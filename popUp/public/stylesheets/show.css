@@ -21,7 +21,6 @@ h1{
 
 .tabs-content, .content {
     width:100%;
-    height:80vh;
     line-height: 40px;
     display:inline-block;
     background-color: #800000;
@@ -113,10 +112,6 @@ tr {background: hsl(50, 50%, 80%); }
 
 tr, td { transition: .4s ease-in; } 
 
-tr:first-child {background: #d3d3d3; }
+tr:nth-child(2n) { background: #838383; }
 
-tr:nth-child(even) { background: #333333; }
-
-tr:nth-child(odd) { background: #d3d3d3; }
-
-td:empty {background: hsla(50, 25%, 60%, 0.7); }
+tr:nth-child(4n) { background: #a3a3a3; }

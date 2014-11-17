@@ -24,5 +24,9 @@
                 %tbody
                     - @result.each do |row|
                         %tr
+                        - i = 1
                         - row.each do |column|
-                            %td= column
+                            %td= column[1]
+                            - if i >= @length
+                                - break
+                            - i = i + 1

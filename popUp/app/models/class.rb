@@ -1,4 +1,4 @@
 
 class Class < ActiveRecord::Base
-    self.table_name = "Class"
+    self.table_name = "class"
 end
