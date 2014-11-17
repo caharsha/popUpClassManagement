@@ -20,6 +20,8 @@
             %input.query#query{:type=>"text", :required => true, :value => "#{@query}"}
             %button.queryButton#queryButton Submit Request
             
+            %button.download#download Download CSV File
+            
             %table
                 %tbody
                     - @result.each do |row|
