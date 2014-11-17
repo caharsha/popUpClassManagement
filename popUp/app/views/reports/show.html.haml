@@ -1,5 +1,5 @@
 %head
-    = stylesheet_link_tag "index"
+    = stylesheet_link_tag "show"
     = javascript_include_tag "application"
     
     .tabs
@@ -20,5 +20,9 @@
             %input.query#query{:type=>"text", :required => true, :value => "#{@query}"}
             %button.queryButton#queryButton Submit Request
             
-            %p Your query was
-            %p= @query
+            %table
+                %tbody
+                    - @result.each do |row|
+                        %tr
+                        - row.each do |column|
+                            %td= column
