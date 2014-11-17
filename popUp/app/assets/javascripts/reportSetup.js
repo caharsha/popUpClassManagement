@@ -1,9 +1,6 @@
 
-$(function(){
 
-    console.log("load");
-
-    $('#queryButton').click( function(e){
+var executeSql = function(e){
     
         console.log("Click");
         
@@ -34,7 +31,21 @@ $(function(){
             window.location = (target);
         }
     
-    });
+}
+
+window.onkeyup = function(e) {
+
+    if( e.keyCode == 13 ){
+        executeSql(e);
+    }
+
+}
+
+$(function(){
+
+    console.log("load");
+
+    $('#queryButton').click( executeSql );
     
     $('#download').click( function(e){
 
