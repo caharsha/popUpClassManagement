@@ -19,7 +19,17 @@ window.onload = function(){
                 build = build + segments[i] + '/';
                 if( segments[i] == "reports") break;
             }
+            
+            var space = sql.split( " ");
+            sql = "";
+            for( var i = 0; i < space.length; ++i){
+                sql = sql + space[i];
+                if( i != space.length - 1)
+                    sql = sql + '-';
+            }
+            
             var target = build + sql;
+            
             window.location = (target);
         }
     
