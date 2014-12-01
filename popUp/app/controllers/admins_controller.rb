@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
     def index
-        @seed = 5
+        if session[:loggedIn]
+            redirect_to reports_path
+        end
     end
     
     def create
@@ -11,7 +13,7 @@ class AdminsController < ApplicationController
         
         #records = ActiveRecord::Base.connection.execute("SELECT * FROM Admin WHERE USERNAME = " + username + " AND PASSWORD = " + password)
         #if records.length > 0
-        if username == "cameron" and password == "hill"
+        if username == "uname" and password == "pword"
             session[:loggedIn] = true
             redirect_to reports_path
         else

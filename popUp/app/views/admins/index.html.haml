@@ -1,15 +1,11 @@
 %body
-    .first
-        %button.reports#reports{:disabled => true} See Reports
-    .second
-        %button.upload#upload{:disabled => true} Upload Data
         
-    - if flash[:login]
+    - if session[:loggedIn]
         .flash Login Successful!
         
     = form_tag admins_path, :method => :post do
         
-        = text_field :username, 'Username'
-        = text_field :password,  'Password', :type => "password"
+        = text_field :username, 'Username', :placeholder => "Username"
+        = text_field :password,  'Password', :type => "password", :placeholder => "Password"
         
         = submit_tag 'Log In'
