@@ -49,6 +49,8 @@ $(function(){
     
     $('#download').click( function(e){
 
+        
+    
         var csv = "data:text/csv;charset=utf-8,\n";
         
         $('tr').each( function(){

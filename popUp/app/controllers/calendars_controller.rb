@@ -1,5 +1,7 @@
 class CalendarsController < ApplicationController
     def index
-        @calendar = 1
+        if not session[:loggedIn]
+            redirect_to admins_path
+        end
     end
 end

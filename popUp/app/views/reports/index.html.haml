@@ -16,7 +16,48 @@
     .tabs-content
         .tab.active#tab2
             .center
-                %h1 Generate Custom Reports
-            %input.query#query{:type=>"text", :required => true, :placeholder => "Enter Report Query"}
-            %button.queryButton#queryButton Submit Request
+                .report1
+                    %label.report Report 1
+                    = form_tag report_path(1), :method => :get do
+                        = text_field :start, 'Start', :placeholder => "Start Date"
+                        = text_field :end,  'End', :placeholder => "End Date"
+                        = submit_tag "Get Report"
+                .report2
+                    %label.report Report 2
+                    = form_tag report_path(2), :method => :get do
+                        = text_field :start, 'Start', :placeholder => "Start Date"
+                        = text_field :end,  'End', :placeholder => "End Date"
+                        = text_field :min, 'Min', :placeholder => "Minimum Classes"
+                        = submit_tag "Get Report"
+                .report3
+                    %label.report Report 2
+                    = form_tag report_path(3), :method => :get do
+                        = text_field :start, 'Start', :placeholder => "Start Date"
+                        = text_field :end,  'End', :placeholder => "End Date"
+                        = text_field :min, 'Min', :placeholder => "Minimum Classes Not Attended"
+                        = submit_tag "Get Report"
+                .report4
+                    %label.report Report 4
+                    = form_tag report_path(4), :method => :get do
+                        = text_field :uins, 'UINs', :placeholder => "List Of UINs (Comma Seperated)"
+                        = submit_tag "Get Report"
+                .report5
+                    %label.report Report 5
+                    = form_tag report_path(5), :method => :get do
+                        = text_field :start, 'Start', :placeholder => "Start Date"
+                        = text_field :end,  'End', :placeholder => "End Date"
+                        = text_field :class,  'Class', :placeholder => "Class Code"
+                        = submit_tag "Get Report"
+                .report6
+                    %label.report Report 6
+                    = form_tag report_path(6), :method => :get do
+                        = text_field :start, 'Start', :placeholder => "Start Date"
+                        = text_field :end,  'End', :placeholder => "End Date"
+                        = text_field :classes,  'Classes', :placeholder => "Class Codes (Comma Seperated)"
+                        = submit_tag "Get Report"
+                .report7
+                    %label.report Report 7
+                    = form_tag report_path(7), :method => :get do
+                        = text_field :custom, 'Custom', :placeholder => "Custom SQL Query", :width => 250
+                        = submit_tag "Get Report"
             
