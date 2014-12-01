@@ -35,7 +35,11 @@ class ReportsController < ApplicationController
             @query = ""
         end
         
-        @result = ActiveRecord::Base.connection.execute(@query)
+        begin
+            @result = ActiveRecord::Base.connection.execute(@query)
+        rescue
+            @result = Array.new
+        end
         
         if @result.length > 0
             @length = @result[0].length
