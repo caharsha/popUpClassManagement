@@ -26,13 +26,11 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-
     %header.navbar.navbar-fixed-top.navbar-inverse
       %nav.navbar-inner
         .container
       %a.brand{:href => "/"}  Texas A&M Pop Up Class Manager
-      -# %img ( src="/images/banner.jpg", alt="Description of image")
-      %p <font color = white> </br></br></br>The Engineering Innovation Center (EIC) at Texas A&M offers short classes to students in Safety, fabrication, electronics technology, Programming, Communications, Project Management, Team Collobration and Creativity to equip them to use the state of the art prototyping models, materials, equipments and support staff at the EIC to build new prototypes, acquire new skills and devlop new relationships as they tackle world problems.
+	%p The Engineering Innovation Center (EIC) at Texas A&M offers short classes to students in Safety, fabrication, electronics technology, Programming, Communications, Project Management, Team Collobration and Creativity to equip them to use the state of the art prototyping models, materials, equipments and support staff at the EIC to build new prototypes, acquire new skills and devlop new relationships as they tackle world problems.
 
     #main{:role => "main"}
       .container
