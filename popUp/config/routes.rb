@@ -5,6 +5,8 @@ PopUp::Application.routes.draw do
     end
     resources :calendars
     resources :admins
+    resources :contacts
+    resources :updates
     
 root :to => redirect('admins')
 end
