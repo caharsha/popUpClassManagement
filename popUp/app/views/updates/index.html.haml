@@ -1,0 +1,32 @@
+%body
+
+    - if flash[:newContact]
+        .success
+            Email Change Successful!
+    - if flash[:upload]
+        .finish
+            Upload Successful!
+
+    .change
+        = button_to "Change Admin Email", contacts_path, :method => :get
+        
+        
+    %h2.newClass
+        Create New Class
+        
+        = form_tag updates_path, :method => :post do
+            = text_field :name, 'Name', :placeholder => "Class Name"
+            = text_field :code, 'Code', :placeholder => "Class Code"
+            = text_field :day, 'Day', :placeholder => "Day"
+            = text_field :month, 'Month', :placeholder => "Month"
+            = text_field :year, 'Year', :placeholder => "Year"
+        
+            = submit_tag 'Confirm'
+            
+    %h2.uins 
+        Upload Missing UINS
+        
+        = form_tag updates_path, :method => :post do
+            = text_area :uins, 'Uins', :placeholder => "Paste In CSV of First Name, Last Name, UIN"
+            = submit_tag 'Upload'
+    

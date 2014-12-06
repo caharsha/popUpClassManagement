@@ -1,0 +1,25 @@
+
+%body
+
+    - if flash[:newContact]
+        .update
+            Update Successful!
+    - if flash[:failedContact]
+        .failed
+            Update Failed!
+
+    .current
+        Current Email
+        .email
+        = @adminEmail
+        
+    = form_tag contacts_path, :method => :post do
+        = text_field :newEmail, 'NewEmail', :placeholder => "New Email"
+        = text_field :confirm, 'Confirm', :placeholder => "Confirm Email"
+        
+        = submit_tag 'Confirm'
+    
+    
+    .back
+    
+    
