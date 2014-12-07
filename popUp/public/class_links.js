@@ -1,4 +1,4 @@
-var eventList =
+var eventList =  
     [
       {
         "start": "'2014-12-02T04:00:00'",

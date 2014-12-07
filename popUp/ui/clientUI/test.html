@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel='stylesheet' href='js/fullcalendar/fullcalendar.css' />
+        <script src='js/lib/jquery.min.js'></script>
+        <script src='js/lib/moment.js'></script>
+        <script src='js/fullcalendar/fullcalendar.js'></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                defaultDate: '2014-12-5',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    {
+                    start: "2014-12-02T04:00:00",
+                    id: "201",
+                    title: "safety",
+                    url: "https://www.facebook.com",
+                    description: "safety"
+                  },
+                  {
+                    start: "2014-12-02T04:00:00",
+                    id: "301",
+                    title: "Mills",
+                    url: "https://www.google.com/",
+                    description: "Mills"
+                  },
+                  {
+                    start: "2014-12-02T13:00:00",
+                    id: "401",
+                    title: "Android",
+                    url: "https://www.yahoo.com/",
+                    description: "Android"
+                  },
+                  {
+                    start: "2014-12-02T07:00:00",
+                    id: "501",
+                    title: "Welding",
+                    url: "http://www.msn.com/",
+                    description: "Welding"
+                  },
+                  {
+                    start: "2014-12-03T05:00:00",
+                    id: "601",
+                    title: "safety",
+                    url: "https://www.facebook.com",
+                    description: "safety"
+                  },
+                  {
+                    start: "2014-12-03T05:00:00",
+                    id: "701",
+                    title: "Mills",
+                    url: "https://www.google.com/",
+                    description: "Mills"
+                  },
+                  {
+                    start: "2014-12-03T15:00:00",
+                    id: "801",
+                    title: "Android",
+                    url: "https://www.yahoo.com/",
+                    description: "Android"
+                  },
+                  {
+                    start: "2014-12-03T09:00:00",
+                    id: "901",
+                    title: "Welding",
+                    url: "http://www.msn.com/",
+                    description: "Welding"
+                  },
+                  {
+                    start: "2014-12-04T06:00:00",
+                    id: "1001",
+                    title: "safety",
+                    url: "https://www.facebook.com",
+                    description: "safety"
+                  },
+                  {
+                    start: "2014-12-04T06:00:00",
+                    id: "1101",
+                    title: "Mills",
+                    url: "https://www.google.com/",
+                    description: "Mills"
+                  },
+                  {
+                    start: "2014-12-04T06:00:00",
+                    id: "1201",
+                    title: "Android",
+                    url: "https://www.yahoo.com/",
+                    description: "Android"
+                  },
+                  {
+                    start: "2014-12-04T10:00:00",
+                    id: "1301",
+                    title: "Welding",
+                    url: "http://www.msn.com/",
+                    description: "Welding"
+                  }]
+            });
+        });
+        </script>
+        <style>
+            #bannerimg {
+                background-color: #910700;
+                z-index: 2;
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">CSCE 606</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="help.html">Resources</a></li>
+                <li><a href="docs/popup-classes-schedule-color-9-2-14.pdf">Fall '14 Schedule</a></li>
+            </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <div class="col-md-8"><img src="img/bannerimg.jpg"></div>
+        <div class="col-md-4">
+        <h2>Proposed Regular Topics</h2>
+        <p>The Pop Up Classes will typically be offered at the EIC on Tuesdays, Wednesdays and Thursdays at 10:00 a.m. and 3:00 p.m. throughout the Fall Semester. This resource provides a simple interface to register for Pop Up classes. Registration links will point to Evenbrite, where the process is completed</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-10">
+            <div id = "calendar"></div>
+        </div>
+        <div class="col-md-2">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#classcodes">Class Codes</a></li>
+            <li class="list-group-item"><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; TAMU EIC</p>
+      </footer>
+    </div> 
+<!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

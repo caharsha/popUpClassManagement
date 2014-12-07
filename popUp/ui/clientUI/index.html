@@ -7,10 +7,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
-        <meta name="description" content="">
+        <meta name=description content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="js/lib/jquery.qtip.min.css">
+        <!-- <link rel="stylesheet" href="js/lib/jquery.qtip.min.css"> -->
         <style>
             body {
                 padding-top: 50px;
@@ -20,8 +20,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel='stylesheet' href='js/fullcalendar/fullcalendar.css' />
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src='js/lib/moment.js'></script>
         <script src='js/fullcalendar/fullcalendar.min.js'></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -37,18 +36,92 @@
                 },
                 editable: false,
                 eventLimit: true, 
-                events: {
-                    url: '../../public/class_links.json',
-                    type: 'GET',
-                    error: function() {
-                        alert('there was an error while fetching events!');
-                    },
-                },
-                eventRender: function(event, element) {
-                    element.qtip({
-                        content: event.description
-                });
-    }
+                events: [
+                      {
+                        start: "2014-12-02T04:00:00",
+                        id: "201",
+                        title: "safety",
+                        url: "https://www.facebook.com",
+                        description: "safety"
+                      },
+                      {
+                        start: "2014-12-02T04:00:00",
+                        id: "301",
+                        title: "Mills",
+                        url: "https://www.google.com/",
+                        description: "Mills"
+                      },
+                      {
+                        start: "2014-12-02T13:00:00",
+                        id: "401",
+                        title: "Android",
+                        url: "https://www.yahoo.com/",
+                        description: "Android"
+                      },
+                      {
+                        start: "2014-12-02T07:00:00",
+                        id: "501",
+                        title: "Welding",
+                        url: "http://www.msn.com/",
+                        description: "Welding"
+                      },
+                      {
+                        start: "2014-12-03T05:00:00",
+                        id: "601",
+                        title: "safety",
+                        url: "https://www.facebook.com",
+                        description: "safety"
+                      },
+                      {
+                        start: "2014-12-03T05:00:00",
+                        id: "701",
+                        title: "Mills",
+                        url: "https://www.google.com/",
+                        description: "Mills"
+                      },
+                      {
+                        start: "2014-12-03T15:00:00",
+                        id: "801",
+                        title: "Android",
+                        url: "https://www.yahoo.com/",
+                        description: "Android"
+                      },
+                      {
+                        start: "2014-12-03T09:00:00",
+                        id: "901",
+                        title: "Welding",
+                        url: "http://www.msn.com/",
+                        description: "Welding"
+                      },
+                      {
+                        start: "2014-12-04T06:00:00",
+                        id: "1001",
+                        title: "safety",
+                        url: "https://www.facebook.com",
+                        description: "safety"
+                      },
+                      {
+                        start: "2014-12-04T06:00:00",
+                        id: "1101",
+                        title: "Mills",
+                        url: "https://www.google.com/",
+                        description: "Mills"
+                      },
+                      {
+                        start: "2014-12-04T06:00:00",
+                        id: "1201",
+                        title: "Android",
+                        url: "https://www.yahoo.com/",
+                        description: "Android"
+                      },
+                      {
+                        start: "2014-12-04T10:00:00",
+                        id: "1301",
+                        title: "Welding",
+                        url: "http://www.msn.com/",
+                        description: "Welding"
+                      }]
+                
             });
 
         });
@@ -120,7 +193,7 @@
       </footer>
     </div> 
 <!-- /container -->        
-        <script type="text/javascript" src="/path/to/jquery.qtip.min.js"></script>
+        <!-- <script type="text/javascript" src="/path/to/jquery.qtip.min.js"></script> -->
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
