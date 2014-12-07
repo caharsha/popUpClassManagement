@@ -1,0 +1,10 @@
+[
+ {
+   id: unique-id-per-class, #classcode
+   title: class-title, #title
+   url: clickable link,
+   start: A Moment-ish input, like an ISO8601 string,
+   editable: false
+},
+....
+]
