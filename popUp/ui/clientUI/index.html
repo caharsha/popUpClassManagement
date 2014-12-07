@@ -9,8 +9,8 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="js/lib/jquery.qtip.min.css">
         <style>
             body {
                 padding-top: 50px;
@@ -37,74 +37,18 @@
                 },
                 editable: false,
                 eventLimit: true, 
-                events: [
-                    {
-                        title: 'All Day Event',
-                        start: '2014-12-01',
-                        editable: false
+                events: {
+                    url: '../../public/class_links.json',
+                    type: 'GET',
+                    error: function() {
+                        alert('there was an error while fetching events!');
                     },
-                    {
-                        title: 'Long Event',
-                        start: '2014-12-07',
-                        end: '2014-12-10',
-                        editable: false
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-12-09T16:00:00',
-                        editable: false
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: '2014-12-16T16:00:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Conference',
-                        start: '2014-12-11',
-                        end: '2014-12-13',
-                        editable: false
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2014-12-12T10:30:00',
-                        end: '2014-12-12T12:30:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Lunch',
-                        start: '2014-12-12T12:00:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2014-12-12T14:30:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Happy Hour',
-                        start: '2014-12-12T17:30:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Dinner',
-                        start: '2014-12-12T20:00:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: '2015-01-13T07:00:00',
-                        editable: false
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2015-01-28',
-                        editable: false
-                    }
-                ]
+                },
+                eventRender: function(event, element) {
+                    element.qtip({
+                        content: event.description
+                });
+    }
             });
 
         });
@@ -176,7 +120,7 @@
       </footer>
     </div> 
 <!-- /container -->        
-
+        <script type="text/javascript" src="/path/to/jquery.qtip.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>

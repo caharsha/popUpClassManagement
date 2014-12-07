@@ -1,0 +1,178 @@
+Class_code,Class_name,Class_description,Prereq,Category
+EICPComm101,Effective Communication,Techniques for effective communication,NULL,Communication
+EICPComm102,Effective Elevator Pitch,Development and delivery of effective product/project pitches in 5 minutes or less,NULL,Communication
+EICPComm103,Video Production,Effective use of video production equipment and software in the EIC for presentations,NULL,Communication
+EICPComm104,Poster Design,Content and layout of project material on posters for effective presentations,NULL,Communication
+EICPComm105,EFolio,Development of an effective EFolio,NULL,Communication
+EICPElec101,Electronic Soldering,Effective techniques for soldering electronic components,NULL,Electronic Technology
+EICPElec102,Circuit Board Design,Capability and use of the circuit board creation equipment in the EIC,EICPSfty101,Electronic Technology
+EICPElec103,Electronic Measurement,"Use of function generators, oscilloscopes, logic analyzers, programmable power supplies, and volt meters",NULL,Electronic Technology
+EICPFabr101,Basic Hand Tools,How to safely use the basic hand tools available in the EIC,NULL,Fabrication
+EICPFabr102,Wood Working Tools,Capabilities and safe use of EIC wood working tools,EICPSfty101,Fabrication
+EICPFabr103,Basic Mill Operation,Basic capabilities and operation of the Mill,EICPSfty101,Fabrication
+EICPFabr104,Intermediate Mill Training,How to select the proper tool to make various cuts with the Mill,EICPSfty101,Fabrication
+EICPFabr105,Advanced Mill Training,How to select the proper tool speed and material feed rate for Mills,EICPSfty101,Fabrication
+EICPFabr106,Basic Lathe Operation,Basic capabilities and operation of the Lathe,EICPSfty101,Fabrication
+EICPFabr107,Intermediate Lathe Training,How to select the proper tool to make various cuts with the Lathes,EICPSfty101,Fabrication
+EICPFabr108,Advanced Lathe Training,How to select the proper tool speed and material feed rate for Lathes,EICPSfty101,Fabrication
+EICPFabr109,3D Printing Use and Submission,"Capabilities for the 3D printers in the EIC, material available, and required information for job submission",EICPSfty101,Fabrication
+EICPFabr110,Laser Cutter,"Capabilities of the laser cutter, material use, library of joints, and job submission",EICPSfty101,Fabrication
+EICPFabr111,ShopBot Basics,Capability and use of the ShopBot,EICPSfty101,Fabrication
+EICPFabr112,ShopBot Programming,This class will introduce you to programming on ShopBots,EICPFabr111,Fabrication
+EICPMgmt101,How do I get my teammate to do his part? Team Building and Leadership,Effective techniques to organize and lead a team to accomplish a project,NULL,Management
+EICPMgmt102,"Oh, That's what you meant: Project Vision, Scope, and Chartering","How to properly define a project, determine the scope of the tasks, and how to launch it.",NULL,Management
+EICPMgmt103,A Web-based Tool to Empower Your Ideation Process,Students will learn how to use the web-based program ideaMACHE to synthesize new ideas,NULL,Management
+EICPPrgm101,Microcontroller I,"Introduction to Microcontrollers, use, programming, capabilities, and types available in the EIC",NULL,Programming
+EICPPrgm102,Microcontroller II,Advanced use of microcontrollers,EICPPrgm101,Programming
+EICPPrgm103,LabView Basics,Introduction and basic programming using the LabView software package,NULL,Programming
+EICPPrgm104,myRio Basics,Capabilities of the myRio platform,NULL,Programming
+EICPPrgm105,LabView and myRio Advanced,Advanced classes for programming in LabView and myRio platform,EICPPrgm103,Programming
+EICPPrgm106,Android Programming,How to program apps in an android environment,NULL,Programming
+EICPPrgm107,MATLAB: Ramp Up for Students,An introduction to MATLAB,NULL,Programming
+EICPPrgm108,MATLAB and Simulink for Embedded Systems and Robotics,"Provides an overview of how to quickly implement custom algorithms on popular, low cost hardware platforms without being an expert in Embedded Systems.",NULL,Programming
+EICPSfty101,Shop Safety,Safety procedures for the EIC,NULL,Safety
+EICPSfty102,Wet Lab Safety,Use of the EIC Wet Lab,EICPSfty101,Safety
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
