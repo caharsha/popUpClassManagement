@@ -20,9 +20,10 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel='stylesheet' href='js/fullcalendar/fullcalendar.css' />
-        <script src='js/lib/jquery.min.js'></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src='js/lib/moment.js'></script>
-        <script src='js/fullcalendar/fullcalendar.js'></script>
+        <script src='js/fullcalendar/fullcalendar.min.js'></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script>
 
@@ -34,9 +35,8 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultDate: '2014-12-5',
-                editable: true,
-                eventLimit: true, // allow "more" link when too many events
+                editable: false,
+                eventLimit: true, 
                 events: [
                     {
                         title: 'All Day Event',
@@ -130,13 +130,13 @@
             <span class="icon-bar"></span>
 
           </button>
-          <a class="navbar-brand" href="#">CSCE 606</a>
+          <a class="navbar-brand" href="#">Pop Up Classes</a>
 
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="help.html">Resources</a></li>
-                <li><a href="docs/popup-classes-schedule-color-9-2-14.pdf">Fall '14 Schedule</a></li>
+                <li><a href="#calendar">Schedule</a></li>
+                <li><a href="docs/popup-classes-schedule-color-9-2-14.pdf">Resources</a></li>
             </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -175,8 +175,7 @@
         <p>&copy; TAMU EIC</p>
       </footer>
     </div> 
-<!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+<!-- /container -->        
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
