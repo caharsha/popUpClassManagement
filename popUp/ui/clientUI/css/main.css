@@ -5,7 +5,52 @@
    ========================================================================== */
 
 
+.stylish {
+    
+	font-family: "georgia", serif;
+	color: #080304;
+}
 
+.font-content {
+	font-family: "Merriweather", sans-serif;
+	text-align: justify;
+	font-size: 15px;
+}
+
+.font-heading {
+	font-family: "Noto Serif", serif;
+	text-align: center;
+}
+
+span.glyphicon-link {
+    font-size: 1.4em;
+}
+
+.lightgreen {
+	color:#94D788;
+}
+.green {
+	color:#47A136;
+}
+
+
+#maroon {
+	color:#780707;
+}
+
+
+.menu-title {
+	font-family: "Bitter", serif;
+	color: antiquewhite;
+	font-size: 20px;
+	text-align: center;
+}
+
+.sidebar-text {
+	
+	font-family: "Noto Serif";
+	font-size: 16px;
+}
 
 
 

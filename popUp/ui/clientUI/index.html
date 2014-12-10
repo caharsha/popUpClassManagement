@@ -20,10 +20,11 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel='stylesheet' href='js/fullcalendar/fullcalendar.css' />
+		<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700|Bitter|Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
         <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src='js/lib/moment.js'></script>
         <script src='js/fullcalendar/fullcalendar.min.js'></script>
-		<script src='class_links2.js'></script>
+		<script src='../../public/class_links.js'></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script>
 
@@ -44,11 +45,6 @@
         });
 
         </script>
-        <style>
-            #bannerimg {
-                background-color: #910700;
-                z-index: 2;
-        </style>
 
     </head>
     <body>
@@ -68,37 +64,43 @@
 
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#calendar">Schedule</a></li>
-                <li><a href="docs/popup-classes-schedule-color-9-2-14.pdf">Resources</a></li>
-            </ul>
+
         </div><!--/.navbar-collapse -->
       </div>
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <div class="col-md-8"><img src="img/bannerimg.jpg"></div>
-        <div class="col-md-4">
-        <h2>Proposed Regular Topics</h2>
-        <p>The Pop Up Classes will typically be offered at the EIC on Tuesdays, Wednesdays and Thursdays at 10:00 a.m. and 3:00 p.m. throughout the Fall Semester. This resource provides a simple interface to register for Pop Up classes. Registration links will point to Evenbrite, where the process is completed</p>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+	  <div class="row">
+		<br/>
+		<br/>
+		<div class="col-md-7"><img class="img-responsive img-rounded" alt="banner-image" src="img/bannerimg.jpg"></div>
+		<div class="col-md-5">
+		<h2 class="font-heading">Proposed Regular Topics</h2>
+		<p class="font-content">The Pop Up Classes will typically be offered at the EIC on Tuesdays, Wednesdays and Thursdays at 10:00 a.m. and 3:00 p.m. throughout the Fall Semester. This resource provides a simple interface to register for the classes.</p>
+		</div>
+
+	  </div>
+  </div>
     
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-10">
+		<br/>
+		<br/>
+		<br/>
+        <div class="col-md-9">
             <div id = "calendar"></div>
         </div>
-        <div class="col-md-2">
-        <ul class="list-group">
-            <li class="list-group-item"><a href="#classcodes">Class Codes</a></li>
-            <li class="list-group-item"><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="col-md-3">
+			<div class="list-group" id="maroon">
+			  <a href="#" class="list-group-item menu-title">Menu</a>
+			  <a href="http://engineering.tamu.edu/easa/areas/enrichment/eic/programs/pop-up-classes" class="list-group-item sidebar-text">List of Classes</a>
+			  <a href="docs/popup-classes-schedule-color-9-2-14.pdf" class="list-group-item sidebar-text">Schedule (PDF)</a>
+			  <a href="http://engineering.tamu.edu/easa/areas/enrichment/eic" class="list-group-item sidebar-text">Engineering Innovation Center Home</a>
+			  <a hre="#" class="list-group-item sidebar-text">Back to top</a>
+			</div>
         </div>
 
       </div>
