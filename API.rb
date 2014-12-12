@@ -13,13 +13,16 @@ smtp = { :address => 'smtp.gmail.com',
 Mail.defaults { delivery_method :smtp, smtp }
 mail_lst = ['caharsha@tamu.edu','kakaly@tamu.edu']
 
-mail_lst.each { |a|
+mail_lst.each { 
+            |a|
 mail = Mail.new do
   from 'test@fiendz.org'
   to a
   subject 'Remainder mail'
   body 'This is a test email'
 end
-mail.deliver! }
+mail.deliver! 
+            
+}
 
 
