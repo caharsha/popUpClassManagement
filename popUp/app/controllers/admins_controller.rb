@@ -9,8 +9,11 @@ class AdminsController < ApplicationController
         
         username = params[:username]["Username"]
         password = params[:password]["Password"]
-        
-        
+	#username = params[:login][:username]
+        #password = params[:login][:password]
+                
+
+
         #records = ActiveRecord::Base.connection.execute("SELECT * FROM Admin WHERE USERNAME = " + username + " AND PASSWORD = " + password)
         #if records.length > 0
         if username == "uname" and password == "pword"
@@ -23,8 +26,6 @@ class AdminsController < ApplicationController
         
         
     end
-    
-
     
     
 end

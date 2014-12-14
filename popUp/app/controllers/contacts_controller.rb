@@ -2,27 +2,21 @@ class ContactsController < ApplicationController
 
 
     def index
-    
-        @adminEmail = "test@gmail.com"
-    
+        ActiveRecord::Base.establish_connection(:adapter => "mysql",:host => "localhost",:username => "root",:password => "root", :database => "popup_classes")  
     end
     
     def create
-    
-        email = params[:newEmail]["NewEmail"]
-        confirm = params[:confirm]["Confirm"]
-        
-        if( email == confirm )
-            @adminEmail = email
-            flash[:newContact] = true
-            redirect_to updates_path
-        else
-            flash[:failedContact] = true
-            redirect_to contacts_path
+        @query = "DELETE FROM Email"
+        @result = ActiveRecord::Base.connection.execute(@query) 
+        emails = params[:newEmail]["NewEmail"]
+        email = emails.split(",")
+	email.each do |em|
+            @query = "INSERT INTO Email VALUES ('#{em}');"
+            @result = ActiveRecord::Base.connection.execute(@query)
         end
-        
-        
-    
+        flash[:newContact] = true
+        redirect_to updates_path
+          
     end
     
 end

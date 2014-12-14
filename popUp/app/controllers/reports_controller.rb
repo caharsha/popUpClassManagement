@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
         if not session[:loggedIn]
             redirect_to admins_path
         end
-    
+
         @movies = 1
     end
     
@@ -17,36 +17,39 @@ class ReportsController < ApplicationController
         @reportId = params[:id]
         
         case @reportId
-        when 1
+        when '1'
             showOne
-        when 2
+        when '2'
             showTwo
-        when 3
+        when '3'
             showThree
-        when 4
+        when '4'
             showFour
-        when 5
+        when '5'
             showFive
-        when 6
+        when '6'
             showSix
-        when 7
+        when '7'
             showCustom
+        when '10'
+            logOut
         else
             @query = ""
         end
         
         begin
+	    ActiveRecord::Base.establish_connection(:adapter => "mysql",:host => "localhost",:username => "root",:password => "root", :database => "popup_classes")
             @result = ActiveRecord::Base.connection.execute(@query)
         rescue
             @result = Array.new
         end
         
-        if @result.length > 0
-            @length = @result[0].length
-            @length = @length/2
-        else
-            @length = 0
-        end
+        #if @result.length > 0
+        #    @length = @result[0].length
+        #    @length = @length/2
+        #else
+        #    @length = 0
+        #end
         #@result = [["MILS", "2014-11-23", "Used"], ["MILS", "2014-11-23", "Used"], ["MILS", "2014-11-23", "Used"]]
         
     end
@@ -64,7 +67,9 @@ class ReportsController < ApplicationController
         endDate = params[:end]["End"]
         endDate = validateDate(endDate, "2500-01-01")
         
-        @query = ""
+        @query = "SELECT * 
+	FROM Student_Info NATURAL JOIN Class_Enrollment NATURAL JOIN Class
+	WHERE Class_Enrollment.Class_date >= '#{startDate}' AND Class_Enrollment.Class_date <= '#{endDate}'"
         
     end
     
@@ -76,7 +81,11 @@ class ReportsController < ApplicationController
         endDate = validateDate(endDate, "2500-01-01")
         min = params[:min]["Min"]
         
-        @query = ""
+        @query = "SELECT UIN, First_name, Last_name, Email, COUNT(Class_code) AS ClassAttended
+	FROM Student_Info NATURAL JOIN Class_Enrollment
+	WHERE Class_Enrollment.Class_date >= '#{startDate}' AND Class_Enrollment.Class_date <= '#{endDate}' AND Attendance LIKE 'used' 
+	AND UIN IN (SELECT UIN FROM Class_Enrollment GROUP BY UIN HAVING COUNT(UIN) >= #{min})
+	GROUP BY UIN HAVING COUNT(Class_code)>= #{min}"
     
     end
     
@@ -87,15 +96,22 @@ class ReportsController < ApplicationController
         endDate = validateDate(endDate, "2500-01-01")
         min = params[:min]["Min"]
         
-        @query = ""
+        @query = "SELECT UIN, First_name, Last_name, Email, COUNT(Class_code) AS ClassNotAttended
+	FROM Student_Info NATURAL JOIN Class_Enrollment
+	WHERE Class_Enrollment.Class_date >= '#{startDate}' AND Class_Enrollment.Class_date <= '#{endDate}'
+		AND Attendance LIKE 'unused'
+        GROUP BY UIN
+	HAVING COUNT(Class_code) >= #{min}"
     end
     
     def showFour
     
         uinList = params[:uins]["UINs"]
-        uinList = uinList.split(",")
+        #uinList = uinList.split(",")
         
-        @query = ""
+        @query = "SELECT UIN, First_name, Last_name, Email, Class_code, Class_date, Class_name
+	FROM Student_Info NATURAL JOIN Class_Enrollment NATURAL JOIN Class
+	WHERE Attendance LIKE 'used' AND UIN IN (#{uinList})"
     
     end
     
@@ -106,7 +122,16 @@ class ReportsController < ApplicationController
         endDate = validateDate(endDate, "2500-01-01")
         targetClass = params[:class]["Class"]
         
-        @query = ""
+        @query = "SELECT Class_code, Class_name, count(UIN)/(SELECT count(UIN) 
+				FROM  Class NATURAL JOIN Class_Enrollment
+				WHERE Class_Enrollment.Class_date >= '#{startDate}'
+                AND Class_Enrollment.Class_date <= '#{endDate}'
+                AND Class_code = '#{targetClass}'
+                GROUP BY Class_code) AS AverageAttendance
+	FROM Class NATURAL JOIN Class_Enrollment AS class_join
+	WHERE class_join.Class_date >= '#{startDate}' AND class_join.Class_date <= '#{endDate}' 
+		AND Attendance LIKE 'used' AND Class_code = '#{targetClass}'
+	GROUP BY Class_code"
     end
     
     def showSix
@@ -115,17 +140,29 @@ class ReportsController < ApplicationController
         endDate = params[:end]["End"]
         endDate = validateDate(endDate, "2500-01-01")
         targetClasses = params[:classes]["Classes"]
-        targetClasses = targetClasses.split(",")
+        targetClasses = targetClasses.gsub(",","','")
         
-        @query = ""
+        @query = "SELECT Class_code, Class_name, count(UIN)
+	FROM Class NATURAL JOIN Class_Enrollment NATURAL JOIN Student_Info
+	WHERE Class_Enrollment.Class_date >= '#{startDate}' AND Class_Enrollment.Class_date <= '#{endDate}'
+		AND Attendance LIKE 'used' AND Class_code IN ('#{targetClasses}')
+	GROUP BY Class_code"
         
     end
     
     def showCustom
+	#@query.gsub! '-', ' '
         @query = params[:custom]["Custom"]
         #logger.debug "\n\nThis is a debug\n\n\n\nHere is the query\n\n"
         #logger.debug @query
-        #@query.gsub! '-', ' '
+        
+    end
+
+    def logOut
+	#@query.gsub! '-', ' '
+        session[:loggedIn] = false
+        redirect_to admins_path
+        
     end
     
     
