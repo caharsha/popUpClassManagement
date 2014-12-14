@@ -1,0 +1,61 @@
+----------------1------------------------
+
+SELECT * 
+FROM Student_Info NATURAL JOIN Class_Enrollment NATURAL JOIN Class
+WHERE Class_Enrollment.Class_date >= ?1 AND Class_Enrollment.Class_date <= ?2
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-------------------------2---------------------------------
+
+SELECT UIN, First_name, Last_name, Email, COUNT(Class_code) AS ClassAttended
+FROM Student_Info NATURAL JOIN Class_Enrollment
+WHERE Attendance = 'used' AND UIN IN (SELECT UIN FROM Class_Enrollment GROUP BY UIN HAVING COUNT(UIN) >= ?1)
+GROUP BY UIN, First_name, Last_name, Email
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-------------------------3----------------------------------
+
+SELECT UIN, First_name, Last_name, Email, COUNT(Class_code) AS ClassNotAttended
+FROM Student_Info NATURAL JOIN Class_Enrollment
+WHERE Class_Enrollment.Class_date >= ?1 AND Class_Enrollment.Class_date <= ?2
+		AND Attendance = 'unused'
+        GROUP BY UIN, First_name, Last_name, Email
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-----------------------4--------------------------------------
+
+SELECT UIN, First_name, Last_name, Email, Class_code, Class_date, Class_name
+FROM Student_Info NATURAL JOIN Class_Enrollment NATURAL JOIN Class
+WHERE Attendance = 'used' AND UIN IN ?1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+-----------------------5------------------------------------
+
+SELECT Class_code, Class_name, count(UIN)/(SELECT count(UIN) 
+				FROM  Class NATURAL JOIN Class_Enrollment
+				WHERE Class_Enrollment.Class_date >= ?1
+                AND Class_Enrollment.Class_date <= ?2
+                AND Class_code = ?3
+                GROUP BY Class_code) AS AverageAttendance
+FROM Class NATURAL JOIN Class_Enrollment AS class_join
+WHERE class_join.Class_date >= ?1 AND class_join.Class_date <= ?2 
+		AND Attendance = 'used' AND Class_code = ?3
+GROUP BY Class_code
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+--------------------------------6----------------------------------------
+
+SELECT Class_code, Class_name, count(UIN)
+FROM Class NATURAL JOIN Class_Enrollment NATURAL JOIN Student_Info
+WHERE Class_Enrollment.Class_date >= ?1 AND Class_Enrollment.Class_date <= ?2
+		AND Attendance = 'used' AND Class_code IN ?3
+GROUP BY Class_code
+
+

@@ -1,0 +1,6 @@
+https://www.eventbriteapi.com/v3/users/me/owned_events/?token=<token goes here>
+Get event IDs and event names
+
+
+Get attendee details for each event
+https://www.eventbriteapi.com/v3/events/12165674861/attendees/?token=<token goes here>
