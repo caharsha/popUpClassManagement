@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !!! 5
 %html
   %head
@@ -10,3 +11,47 @@
     
   %body
     = yield
+=======
+-#!!! 5
+-#%html
+-#  %head
+-#    %title PopUp Class Manager
+-#    = stylesheet_link_tag 'application'
+-#    = csrf_meta_tags
+
+    
+-#    %h1 TAMU Pop Up Class Manager
+    
+-#  %body
+-#    = yield
+
+
+-# app/views/layouts/application.html.haml
+
+-# Jam in a flash[:notice] so that we can see the flash rendering in effect
+- flash[:notice] = "The Pop Up Classes will typically be offered at the EIC on Tuesdays, Wednesdays and Thursdays at 10:00 a.m. and 3:00 p.m. throughout the Fall Semester."
+!!! 5
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "application"
+    %meta{:content => content_for?(:description) ? yield(:description) : "application", :name => "description"}
+    = stylesheet_link_tag :application
+    = csrf_meta_tags
+    = yield(:head)
+  %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      %nav.navbar-inner
+        .container
+      %a.brand{:href => "/"}  Texas A&M Pop Up Class Manager
+	%p The Engineering Innovation Center (EIC) at Texas A&M offers short classes to students in Safety, fabrication, electronics technology, Programming, Communications, Project Management, Team Collobration and Creativity to equip them to use the state of the art prototyping models, materials, equipments and support staff at the EIC to build new prototypes, acquire new skills and devlop new relationships as they tackle world problems.
+
+    #main{:role => "main"}
+      .container
+        .content
+          .row
+            .span12
+              = render 'layouts/messages'
+              = yield
+          %footer
+>>>>>>> origin/harsha-admin
